@@ -1,12 +1,53 @@
 {
-  "name": "airbnb-clone",
-  "version": "0.1.0",
-  "private": true,
+  "name": "enterprise-airbnb-clone",
+  "version": "2.0.0",
+  "description": "Enterprise-grade Airbnb clone with Next.js 15, TypeScript, Prisma, and advanced features",
+  "author": {
+    "name": "Yassir Rzigui",
+    "email": "rziguiyassir@gmail.com",
+    "url": "https://github.com/yazzy01"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yazzy01/airbnb-clone.git"
+  },
+  "keywords": [
+    "airbnb-clone",
+    "nextjs",
+    "typescript",
+    "prisma",
+    "rental-platform",
+    "booking-system",
+    "property-management",
+    "full-stack",
+    "enterprise"
+  ],
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:seed": "prisma db seed",
+    "db:studio": "prisma studio",
+    "db:reset": "prisma migrate reset",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "analyze": "cross-env ANALYZE=true npm run build",
+    "pre-commit": "npm run lint:fix && npm run type-check && npm run test",
+    "deploy": "vercel --prod"
   },
   "dependencies": {
     "@prisma/client": "^6.7.0",
